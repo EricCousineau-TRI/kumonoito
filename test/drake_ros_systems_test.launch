@@ -1,0 +1,3 @@
+<launch>
+  <test test-name="drake_ros_systems_test" pkg="kumonoito" type="drake_ros_systems_test.py"/>
+</launch>

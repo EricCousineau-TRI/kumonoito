@@ -1,3 +1,17 @@
+# Python Hax
+
+To build:
+
+    # This is hacky, but avoids needing to setup a workspace if we're dealing
+    # with just one file.
+    cd kumonoito
+    rm -rf build && mkdir build && cd build
+    source /opt/ros/kinetic/setup.bash
+    cmake .. -DCMAKE_PREFIX_PATH="/opt/drake;${CMAKE_PREFIX_PATH}"
+    export PYTHONPATH=/opt/drake/lib/python2.7/site-packages:${PYTHONPATH}
+    source devel/setup.bash
+    rostest --text kumonoito drake_ros_systems_test.launch
+
 # Kumonoito
 Kumonoito is the silken spidery thread that takes one from *Drake* to *ROS* and back. This thread, cast by the Great Warrior Gesar (**Russ Tedrake**) was woven in the hidden land of **Drake-Shambhala** where Buddhist values and traditions rule and can lead the hordes of the righteous but damned (**Drake Developers**) to climb up towards salvation (**ROS / LCM interoperability**).
 

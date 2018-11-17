@@ -11,6 +11,7 @@ find_package(drake CONFIG REQUIRED)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   roscpp
+  rostest
   std_msgs
 )
 
@@ -125,3 +126,11 @@ install(TARGETS
 install(DIRECTORY launch models
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
+
+#############
+## Testing ##
+#############
+
+# Use example tests from:
+# https://github.com/ros/ros_tutorials/tree/kinetic-devel/rospy_tutorials
+add_rostest(test/drake_ros_systems_test.launch)
